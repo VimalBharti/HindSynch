@@ -46,6 +46,38 @@ return [
             'provider' => 'users',
             'hash' => false,
         ],
+        'admin' => [
+            'driver' => 'session',
+            'provider' => 'admins',
+        ],
+        'admin-api' => [
+            'driver'    => 'token',
+            'provider'  => 'admins',
+        ],
+        'college' => [
+            'driver' => 'session',
+            'provider' => 'colleges',
+        ],
+        'college-api' => [
+            'driver'    => 'token',
+            'provider'  => 'colleges',
+        ],
+        'company' => [
+            'driver' => 'session',
+            'provider' => 'companies',
+        ],
+        'company-api' => [
+            'driver'    => 'token',
+            'provider'  => 'companies',
+        ],
+        'teacher' => [
+            'driver' => 'session',
+            'provider' => 'teachers',
+        ],
+        'teacher-api' => [
+            'driver'    => 'token',
+            'provider'  => 'teachers',
+        ],
     ],
 
     /*
@@ -69,6 +101,22 @@ return [
         'users' => [
             'driver' => 'eloquent',
             'model' => App\User::class,
+        ],
+        'admins' => [
+            'driver' => 'eloquent',
+            'model' => App\Admin::class,
+        ],
+        'colleges' => [
+            'driver' => 'eloquent',
+            'model' => App\College::class,
+        ],
+        'companies' => [
+            'driver' => 'eloquent',
+            'model' => App\Company::class,
+        ],
+        'teachers' => [
+            'driver' => 'eloquent',
+            'model' => App\Teacher::class,
         ],
 
         // 'users' => [
@@ -95,6 +143,26 @@ return [
     'passwords' => [
         'users' => [
             'provider' => 'users',
+            'table' => 'password_resets',
+            'expire' => 60,
+        ],
+        'admins' => [
+            'provider' => 'admins',
+            'table' => 'password_resets',
+            'expire' => 60,
+        ],
+        'colleges' => [
+            'provider' => 'colleges',
+            'table' => 'password_resets',
+            'expire' => 60,
+        ],
+        'companies' => [
+            'provider' => 'companies',
+            'table' => 'password_resets',
+            'expire' => 60,
+        ],
+        'teachers' => [
+            'provider' => 'teachers',
             'table' => 'password_resets',
             'expire' => 60,
         ],
